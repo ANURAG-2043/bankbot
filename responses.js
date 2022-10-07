@@ -1,47 +1,25 @@
 function getBotResponse(input) {
-    var key, choices, responses ;
-    var key , Savings,Account,Currents,minor,minorWParents,minimumBalance,documents,required;//Savings,Accounts,Currents,minor, minor with parents, minimum balance, documents, needed/required
-    key = analyze( input );
-    switch (key) {
-        
-        case "10000":{
-            responses = key;
-            responses = "there are two types of Accounts: Savings and Currents";
-            break;
-        }
-        
-        case "11100":{   
-            responses = key ;
-            responses = "Minimum balance required for Savings account is Rs. 2000"   ;   
-            break;
-        }
-            
-        default: 
-        responses =  "didnt";
-            break;
-    }
-    return responses;
-    /*if(input.search("Savings") != null){
-        Savings = "1";
-    }
-    if(input.search("accounts") != null){
-        Account = "1";
-    }
-    if(input.search("minimum balance") != null){
-        minimumBalance = "1";
-    }
-    if (input.search("accounts") != null) {
-        responses = "there are two types of Accounts: Savings and Currents";
-    }else if (Account == "1" || Savings == "1" || minimumBalance == "1") {
+    var responses ;
+    //dont know dont care dont ask if it works it works!!! if it doesnt fuck off!!!
+    if (((input.search("accounts") != -1) || (input.search("account") != -1) )&& (input.search("savings") == -1) && (input.search("current") == -1)) {
+        responses = "there are two types of Accounts: Savings and Current";
+    }else if ( ((input.search("accounts") != -1) || (input.search("account") != -1) ) && (input.search("savings") != -1) && (input.search("minimum balance") != -1)) {
         responses = "Minimum balance required for Savings account is Rs. 2000"   ;
-    }else if (Account == "1" || Savings == "1" || documents == "1") {
-        responses = "docs"   ;
-    }else{
-        return 0;
-    }*/
-    
-
-    // Greetings
+    }else if (((input.search("accounts") != -1) || (input.search("account") != -1) ) && (input.search("savings") != -1) && (input.search("documents") != -1)) {
+        responses = "1. Aadhar card \n 2. Pan card \n3. Electricity bill \n 4. passport sized photo"   ;
+    }else if (((input.search("accounts") != -1) || (input.search("account") != -1) ) && (input.search("savings") != -1) && (input.search("documents") != -1)  && (input.search("minor") != -1)) {
+        responses = "1. birth certificate \n 2. leaving caetificate \n3. Pan card if age above 12 \n 4. passport sized photo"   ;
+    }else if (((input.search("accounts") != -1) || (input.search("account") != -1) ) && (input.search("savings") != -1) && (input.search("documents") != -1)  && (input.search("minor with parent") != -1)) {
+        responses = "1. birth certificate \n 2. leaving caetificate \n3. Pan card if age above 12 \n 4. passport sized photo \n5.Parent's pan card\n 6.parent's aadhar card \n Note: It will be handled by the parent";
+    }else if (((input.search("accounts") != -1) || (input.search("account") != -1) )&& (input.search("savings") != -1) && (input.search("minimum balance") == -1)) {
+        responses = "there are three types of Savings Accounts: \n 1.Savings \n2. Minor with parent \n3. Minor only ";
+     }else if (((input.search("accounts") != -1) || (input.search("account") != -1)) && (input.search("current") != -1) && (input.search("savings") == -1)) {
+        responses = "there are four types of Accounts: \n 1.proprietorship \n 2.partnership \n 3.private ltd.\n 4.public ltd ";
+    }//else if (((input.search("accounts") != -1) || (input.search("account") != -1) ) && (input.search("current") != -1) && (input.search("documents") != -1)  && (input.search("proprietorship") != -1)) {
+        //responses = "1. birth certificate \n 2. leaving caetificate \n3. Pan card if age above 12 \n 4. passport sized photo"   ;
+    //}
+    else{
+        // Greetings
     if (input == "hello" || input == "hi") {
         return "Hello there!";
     } else if (input == "goodbye" || input == "bye" || input == "see you later" || input == "see yo soon") {
@@ -55,4 +33,9 @@ function getBotResponse(input) {
     } else {
         return "Try asking something else!";
     } 
+    }
+    
+    return responses;
+
+    
 }
