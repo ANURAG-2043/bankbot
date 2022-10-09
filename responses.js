@@ -69,10 +69,11 @@ function getBotResponse(input) {
         // Greetings
     if (input == "hello" || input == "hi"||input =="hii"||input == "Hello" || input == "Hi"||input =="Hii") {
         return "Hello there!";
-    } else if (input == "goodbye" || input == "bye" || input == "see you later" || input == "see yo soon"||input == "Goodbye" || input == "Bye" || input == "Byee") {
-        return "Talk to you later!";
-    } else if (input == "thank you") {
+    // } else if (input == "goodbye" || input == "bye" || input == "see you later" || input == "see yo soon"||input == "Goodbye" || input == "Bye" || input == "Byee") {
+    //     return "Talk to you later!";
+    } else if (input == "thank you" || input == "thanks"||input == "Thank you" || input == "Thanks"){
         return "You're Welcome!";
+        // i don't think these questions or topics are required in our bankbot as it is some kinda professional...
     }else if (input == "how are you?") {
         return "I'm fine! \n How are you?";
     }else if (input == "I'm fine" || input == "I'm good" ) {
