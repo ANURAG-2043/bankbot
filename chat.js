@@ -93,8 +93,8 @@ function sendButton() {
     getResponse();
 }
 
-function heartButton() {
-    buttonSendText("Heart clicked!")
+function thumbsUpButton() {
+    buttonSendText("Okay, it was helpful...!!!")
 }
 
 // Press enter to send a message
